@@ -1,58 +1,95 @@
-# Sistema-consulta-de-arquivo
-Sistema de Controle de Estoque - Eletrocasas Cuiabá
-Descrição
-Este projeto é um sistema de controle de estoque simples desenvolvido para a gestão de produtos de uma loja fictícia chamada Eletrocasas Cuiabá. O sistema permite cadastrar produtos, consultar estoque, realizar vendas, calcular faturamento e gerenciar o estoque (aumentar e diminuir quantidades).
+# Sistema de Gestão de Estoque
 
-O sistema armazena os dados em um arquivo JSON chamado estoque.json e oferece um menu interativo para que o usuário possa realizar diversas operações.
+Este repositório contém um sistema de gestão de estoque desenvolvido em Python. O sistema permite o cadastro de produtos, controle de estoque, registro de vendas e cálculo do faturamento. Ele utiliza um arquivo JSON para armazenar as informações do estoque de forma persistente.
 
-Funcionalidades
-O sistema oferece as seguintes funcionalidades:
+## Autor
+- **Khawan Silva**
+- **Kamila Antonia**
+- **Lucas Galileu**
+- **Joelson Junior**
 
-Cadastrar Produto: Permite o cadastro de novos produtos no estoque, incluindo nome, ano de fabricação, preço, quantidade em estoque e quantidade vendida.
-Consultar Produto: Exibe as informações detalhadas de um produto a partir do código do produto.
-Consultar Estoque: Exibe uma lista de todos os produtos cadastrados no estoque, incluindo o código, nome, ano, preço, quantidade em estoque e quantidade vendida.
-Realizar Vendas: Permite registrar a venda de um produto, alterando a quantidade em estoque e a quantidade vendida.
-Calcular Faturamento Total: Calcula o faturamento total com base nas vendas realizadas.
-Aumentar Estoque: Permite aumentar a quantidade de um produto no estoque.
-Diminuir Estoque: Permite diminuir a quantidade de um produto no estoque (caso haja estoque suficiente).
-Tecnologias Utilizadas
-Python 3
-JSON (para persistência de dados)
-Como Usar
-Clone o repositório:
+## Data
+- **09/Nov/2023**
 
-bash
-Copiar código
-git clone https://github.com/seu-usuario/eletrocasas-cuiaba.git
-Navegue até o diretório do projeto:
+## Email
+- **kha@mail.com**
 
-bash
-Copiar código
-cd eletrocasas-cuiaba
-Execute o script Python:
+## Funcionalidades
 
-bash
-Copiar código
-python estoque.py
-O menu de opções será exibido, e você poderá interagir com o sistema.
+- Cadastro de novos produtos no estoque.
+- Consulta de produtos individuais no estoque.
+- Visualização de todo o estoque com detalhes.
+- Realização de vendas com atualização do estoque.
+- Aumento ou diminuição da quantidade de produtos em estoque.
+- Cálculo do faturamento total com base nas vendas realizadas.
 
-Estrutura do Arquivo estoque.json
-O arquivo estoque.json é usado para armazenar os dados do estoque e deve ter a seguinte estrutura:
+## Estrutura de Dados
 
-json
-Copiar código
-{
-    "1": ["Produto 1", "2023", 50.0, 100, 30],
-    "2": ["Produto 2", "2022", 100.0, 200, 50]
-}
-Cada produto é identificado por um código numérico, e os detalhes de cada produto são armazenados em uma lista com os seguintes campos:
+O sistema armazena os dados de produtos no arquivo `estoque.json` no formato JSON. Cada produto possui os seguintes atributos:
 
-Nome
-Ano de Fabricação
-Preço
-Quantidade em Estoque
-Quantidade Vendida
-Contribuições
-Este projeto é mantido por Khawan Silva, Kamila Antonia, Lucas Galileu e Joelson Junior.
+- **Código**: Identificador único do produto.
+- **Nome**: Nome do produto.
+- **Ano**: Ano de fabricação do produto.
+- **Preço**: Preço do produto.
+- **Quantidade em Estoque**: Quantidade disponível do produto.
+- **Quantidade Vendida**: Quantidade do produto já vendida.
 
-Se desejar contribuir, envie um pull request ou crie uma issue para sugerir melhorias ou correções.
+## Funções do Sistema
+
+### 1. `carregar_json()`
+
+Carrega a estrutura do arquivo `estoque.json` e retorna um dicionário com os dados do estoque.
+
+### 2. `salvar_json()`
+
+Salva as alterações feitas no estoque de volta no arquivo `estoque.json`.
+
+### 3. `inserir_produto()`
+
+Permite o cadastro de novos produtos no estoque, atribuindo um código único a cada produto.
+
+### 4. `aumentar_estoque()`
+
+Permite aumentar a quantidade de um produto específico no estoque.
+
+### 5. `diminuir_estoque()`
+
+Permite diminuir a quantidade de um produto específico no estoque, com a verificação de que o estoque não ficará negativo.
+
+### 6. `consultar_produto()`
+
+Consulta e exibe os detalhes de um produto específico a partir de seu código.
+
+### 7. `calcular_faturamento()`
+
+Calcula e exibe o faturamento total das vendas realizadas até o momento.
+
+### 8. `registrar_venda()`
+
+Registra uma venda, subtraindo uma unidade do produto do estoque e somando à quantidade de vendas realizadas.
+
+### 9. `consulta_estoque()`
+
+Exibe todos os produtos no estoque com seus respectivos detalhes.
+
+### 10. `Menu()`
+
+Exibe o menu de opções para o usuário interagir com o sistema.
+
+## Exemplo de Uso
+
+O sistema é executado via terminal, onde o usuário pode escolher entre as opções de cadastrar produto, consultar produtos, registrar vendas, aumentar/diminuir estoque, calcular faturamento ou sair.
+
+Exemplo de execução do menu:
+
+```bash
+*****Eletrocasas Cuiaba*****
+1 - Cadastrar produto
+2 - Consultar produto
+3 - Consultar Estoque
+4 - Realizar Vendas
+5 - Calcular Faturamento total
+6 - Aumentar Estoque
+7 - Diminuir Estoque
+8 - Sair
+Digite sua opção: 
