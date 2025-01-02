@@ -4,15 +4,12 @@ Este repositório contém um sistema de gestão de estoque desenvolvido em Pytho
 
 ## Autor
 - **Khawan Silva**
-- **Kamila Antonia**
-- **Lucas Galileu**
-- **Joelson Junior**
 
 ## Data
 - **09/Nov/2023**
 
 ## Email
-- **kha@mail.com**
+- **kfkhawan@gmail.com**
 
 ## Funcionalidades
 
